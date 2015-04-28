@@ -1,0 +1,178 @@
+package pkg.order;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
+import pkg.exception.StockMarketExpection;
+import pkg.market.Market;
+import pkg.trader.Trader;
+
+public class OrderBook {
+	Market m;
+	HashMap<String, ArrayList<Order>> buyOrders;
+	HashMap<String, ArrayList<Order>> sellOrders;
+	Order someOrder;
+
+	public OrderBook(Market m) {
+		this.m = m;
+		buyOrders = new HashMap<String, ArrayList<Order>>();
+		sellOrders = new HashMap<String, ArrayList<Order>>();
+	}
+
+	
+        public void addToOrderBook(Order order) {
+		// Populate the buyOrders and sellOrders data structures, whichever
+		// appropriate
+		
+		if(order.getType() == "Sell"){
+			sellOrders.put(order.getTrader().getName(), order.getTrader().getOrdersPlaced());
+		}
+		else{
+			buyOrders.put(order.getTrader().getName(), order.getTrader().getOrdersPlaced());
+		}
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void trade() {
+		// Complete the trading.
+		// 1. Follow and create the orderbook data representation (see spec)
+		
+		ArrayList <List> tempArrayP = new ArrayList(sellOrders.values());
+		ArrayList tempArrayPtwo = new ArrayList();
+		ArrayList originalPrice = new ArrayList();
+		ArrayList originalSize = new ArrayList();
+		for(int j=0; (j<tempArrayP.size()); j++) {
+			tempArrayPtwo.add(tempArrayP.get(j).get(0));
+			someOrder = (Order) tempArrayPtwo.get(j);
+			double someNewPrice = someOrder.getPrice();
+			originalPrice.add(someNewPrice);
+			int someNewSize = someOrder.getSize();
+			originalSize.add(someNewSize);
+			
+		}
+		ArrayList finalSellPrice = new ArrayList();
+		ArrayList finalSellSize = new ArrayList();
+		int tempIndex;
+		for(int d=0; (d<tempArrayP.size());d++) {
+			tempIndex = originalPrice.indexOf(Collections.min(originalPrice));
+			finalSellPrice.add(originalPrice.get(tempIndex));
+			finalSellSize.add(originalSize.get(tempIndex));
+			originalPrice.remove(tempIndex);
+			originalSize.remove(tempIndex);
+		}
+		ArrayList <List> tempArrayB = new ArrayList(buyOrders.values());
+		ArrayList tempArrayBtwo = new ArrayList();
+		ArrayList firstPrice = new ArrayList();
+		ArrayList firstSize = new ArrayList();
+		for(int j=0; j<tempArrayP.size(); j++) {
+			tempArrayBtwo.add(tempArrayB.get(j).get(0));
+			someOrder = (Order) tempArrayBtwo.get(j);
+			double someNewPrice = someOrder.getPrice();
+			firstPrice.add(someNewPrice);
+			int someNewSize = someOrder.getSize();
+			firstSize.add(someNewSize);
+			
+		}
+		ArrayList finalBuyPrice = new ArrayList();
+		ArrayList finalBuySize = new ArrayList();
+		int tempInd;
+		for(int d=0; (d<tempArrayP.size());d++) {
+			tempInd = firstPrice.indexOf(Collections.min(firstPrice));
+			finalBuyPrice.add(firstPrice.get(tempInd));
+			finalBuySize.add(firstSize.get(tempInd));
+			firstPrice.remove(tempInd);
+			firstSize.remove(tempInd);
+		}
+		ArrayList cumulativeSell = new ArrayList();
+		ArrayList cumulativeBuy = new ArrayList();
+		cumulativeSell.add(finalSellSize.get(0));
+		cumulativeBuy.add(finalBuySize.get(0));
+		for (int i=1; (i<tempArrayP.size()); i++) {
+			int tempSellSize = (Integer) cumulativeSell.get(i-1) + (Integer) finalSellSize.get(i);
+			cumulativeSell.add(tempSellSize);
+		}
+		int cumulativeBuyInt = (Integer) cumulativeBuy.get(0);
+		for (int k = finalBuySize.size(); k>1; k--) {
+			cumulativeBuyInt = cumulativeBuyInt + (Integer) finalBuySize.get(k-1);
+			cumulativeBuy.add(cumulativeBuyInt);
+		}
+		
+		Collections.reverse(cumulativeBuy);
+		int lastElement = (cumulativeBuy.size()-1);
+		cumulativeBuy.add(0,(cumulativeBuy.get(lastElement)));
+		cumulativeBuy.remove(cumulativeBuy.size()-1);
+
+		int BuyIt=1;
+		int SellIt=1;
+		int Variance = Integer.MAX_VALUE;
+		double optPrice = 0;
+		
+		while(((finalBuyPrice.size()-2)> BuyIt)){
+			double buyPrice = (Double)finalBuyPrice.get(BuyIt);
+			double sellPrice = (Double)finalSellPrice.get(SellIt);
+			if(buyPrice == sellPrice)
+			{
+				int TempBuy =  (Integer)cumulativeBuy.get(BuyIt);
+				int TempSell = (Integer)cumulativeSell.get(SellIt);
+				int TempVar = Math.abs(TempBuy - TempSell);
+				if(Variance >= TempVar){
+					Variance = TempVar;
+					optPrice = (Double)finalBuyPrice.get(BuyIt);
+				}
+				BuyIt++;
+				SellIt++;
+			}
+			else
+				SellIt++;
+			}
+		
+		
+		for (String key : buyOrders.keySet()){
+			ArrayList<Order> tempBuys = new ArrayList<Order>();
+			tempBuys = buyOrders.get(key);
+			Order buyOrder;
+			buyOrder = (Order) tempBuys.get(0);
+			double market = 0.0;
+			
+			if(buyOrder.getPrice() >= optPrice || buyOrder.getPrice()== market){
+				Trader currentTrader;
+				currentTrader = buyOrder.getTrader();
+				try {
+					currentTrader.tradePerformed(buyOrder, optPrice);
+					
+				} catch (StockMarketExpection e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		for(String key : sellOrders.keySet()){
+			ArrayList<Order> tempSells = new ArrayList<Order>();
+			tempSells = sellOrders.get(key);
+			Order sellOrder;
+			sellOrder = (Order) tempSells.get(0);
+			
+			if(sellOrder.getPrice() <= optPrice){
+				Trader currentTrader;
+				currentTrader = sellOrder.getTrader();
+				try {
+					currentTrader.tradePerformed(sellOrder, optPrice);
+					
+				} catch (StockMarketExpection e) {
+			}
+		}
+		}
+		// 2. Find the matching price
+		// 3. Update the stocks price in the market using the PriceSetter.
+		// Note that PriceSetter follows the Observer pattern. Use the pattern.
+		// 4. Remove the traded orders from the orderbook
+		// 5. Delegate to trader that the trade has been made, so that the
+		// trader's orders can be placed to his possession (a trader's position
+		// is the stocks he owns)
+		// (Add other methods as necessary)
+	}
+
+}

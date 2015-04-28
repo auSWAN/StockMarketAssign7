@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_4272c5ad",
+        "filename": "marketHistory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1004798
+      },
+      "writtenOn": "2015-04-28T20:57:33Z",
+      "side": 1,
+      "message": "variable should be made more meaningful",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 9
+      },
+      "revId": "45e209cc5034b558d8153a8ae9546265a5907c38",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_82679de8",
+        "filename": "marketHistory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1004798
+      },
+      "writtenOn": "2015-04-28T20:57:33Z",
+      "side": 1,
+      "message": "variable should be made private",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 9
+      },
+      "revId": "45e209cc5034b558d8153a8ae9546265a5907c38",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_c25d1517",
+        "filename": "marketHistory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1004798
+      },
+      "writtenOn": "2015-04-28T20:57:33Z",
+      "side": 1,
+      "message": "variable should be made private",
+      "range": {
+        "startLine": 17,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 34
+      },
+      "revId": "45e209cc5034b558d8153a8ae9546265a5907c38",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

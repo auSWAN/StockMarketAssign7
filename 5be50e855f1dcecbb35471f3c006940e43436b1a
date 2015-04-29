@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1a106d94_380d3638",
+        "filename": "OrderBook",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1004793
+      },
+      "writtenOn": "2015-04-29T04:31:53Z",
+      "side": 1,
+      "message": "Use of variable type in name. Change variable name.",
+      "revId": "5be50e855f1dcecbb35471f3c006940e43436b1a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a106d94_c28b5566",
         "filename": "OrderBook",
         "patchSetId": 1
@@ -47,6 +64,40 @@
       "writtenOn": "2015-04-28T21:08:36Z",
       "side": 1,
       "message": "Vague naming. Should use descriptive variable name.",
+      "revId": "5be50e855f1dcecbb35471f3c006940e43436b1a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_d81b4271",
+        "filename": "OrderBook",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1004793
+      },
+      "writtenOn": "2015-04-29T04:31:53Z",
+      "side": 1,
+      "message": "Bad practice to start variable name with capital letter. Start lower case then use camel-case",
+      "revId": "5be50e855f1dcecbb35471f3c006940e43436b1a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_18295a8a",
+        "filename": "OrderBook",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1004793
+      },
+      "writtenOn": "2015-04-29T04:31:53Z",
+      "side": 1,
+      "message": "Remove comments or reorganize them.",
       "revId": "5be50e855f1dcecbb35471f3c006940e43436b1a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false

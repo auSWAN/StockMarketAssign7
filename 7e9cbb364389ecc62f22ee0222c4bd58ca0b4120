@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_d3f04593",
+        "filename": "trader",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1004784
+      },
+      "writtenOn": "2015-04-29T08:55:31Z",
+      "side": 1,
+      "message": "Consider removing large comment block. It describes what the code is doing, when method names should reveal intent.",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 47
+      },
+      "revId": "7e9cbb364389ecc62f22ee0222c4bd58ca0b4120",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_73f7d18b",
+        "filename": "trader",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1004784
+      },
+      "writtenOn": "2015-04-29T08:55:31Z",
+      "side": 1,
+      "message": "Consider removing large comment block. It describes what the code is doing, when method names should reveal intent.",
+      "range": {
+        "startLine": 94,
+        "startChar": 2,
+        "endLine": 102,
+        "endChar": 5
+      },
+      "revId": "7e9cbb364389ecc62f22ee0222c4bd58ca0b4120",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_132e5dfb",
+        "filename": "trader",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1004784
+      },
+      "writtenOn": "2015-04-29T08:55:31Z",
+      "side": 1,
+      "message": "Consider removing large comment block. It describes what the code is doing, when method names should reveal intent.",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 155,
+        "endChar": 31
+      },
+      "revId": "7e9cbb364389ecc62f22ee0222c4bd58ca0b4120",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_712ea444",
+        "filename": "marketHistory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1004805
+      },
+      "writtenOn": "2015-04-29T20:29:41Z",
+      "side": 1,
+      "message": "This should have been changed to:\nthis.market \u003d m;",
+      "revId": "8000545fd11f36f40c964f9f81ff8941b08a46ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_b1249c60",
+        "filename": "marketHistory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1004805
+      },
+      "writtenOn": "2015-04-29T20:29:41Z",
+      "side": 1,
+      "message": "\u0027m\u0027 should be \u0027market\u0027",
+      "revId": "8000545fd11f36f40c964f9f81ff8941b08a46ff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

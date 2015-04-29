@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_e042c43c",
+        "filename": "market.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1004799
+      },
+      "writtenOn": "2015-04-29T16:01:14Z",
+      "side": 1,
+      "message": "Remove whitespace",
+      "revId": "d79fadd297a898063c99a611a87384746b61266e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

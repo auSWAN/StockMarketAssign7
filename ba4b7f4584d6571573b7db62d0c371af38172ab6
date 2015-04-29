@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_a07a8c74",
+        "filename": "client.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1004799
+      },
+      "writtenOn": "2015-04-29T16:04:54Z",
+      "side": 1,
+      "message": "Rename variable m to something more meaningful",
+      "revId": "ba4b7f4584d6571573b7db62d0c371af38172ab6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_40f0f8fd",
+        "filename": "client.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1004799
+      },
+      "writtenOn": "2015-04-29T16:04:54Z",
+      "side": 1,
+      "message": "Rename variable m1 to something more meaningful",
+      "revId": "ba4b7f4584d6571573b7db62d0c371af38172ab6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}

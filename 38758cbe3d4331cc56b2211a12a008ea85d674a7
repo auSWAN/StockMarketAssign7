@@ -16,6 +16,69 @@
       "revId": "38758cbe3d4331cc56b2211a12a008ea85d674a7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_b673ed7e",
+        "filename": "OrderBook",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1004808
+      },
+      "writtenOn": "2015-04-30T03:07:31Z",
+      "side": 1,
+      "message": "rename short identifier \"m\" to a more detailed and meaningful variable name",
+      "revId": "38758cbe3d4331cc56b2211a12a008ea85d674a7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_36bc1ddc",
+        "filename": "OrderBook",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1004808
+      },
+      "writtenOn": "2015-04-30T03:07:31Z",
+      "side": 1,
+      "message": "Duplicate code from lines 48-52.  Remove both areas (don\u0027t know how to highlight both areas at the same time, sorry) and put one instance of the code into a separate method to call from.",
+      "range": {
+        "startLine": 65,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 3
+      },
+      "revId": "38758cbe3d4331cc56b2211a12a008ea85d674a7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_d699497a",
+        "filename": "OrderBook",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1004808
+      },
+      "writtenOn": "2015-04-30T03:07:31Z",
+      "side": 1,
+      "message": "Simialar code to lines 54-60.  Remove both areas (don\u0027t know how to highlight both areas at the same time, sorry) and put one instance of the code into a separate method to call from.",
+      "range": {
+        "startLine": 77,
+        "startChar": 2,
+        "endLine": 83,
+        "endChar": 3
+      },
+      "revId": "38758cbe3d4331cc56b2211a12a008ea85d674a7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
